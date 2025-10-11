@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | موتري</title>
+    <!-- خط Cairo الاحترافي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #DAA520;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-secondary: #999;
+            --border-color: #333;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 60px auto 0 auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(218,165,32,.09);
+            padding: 36px 18px 40px 18px;
+        }
+        header.main-header {
+            padding: 25px 0 0;
+            background: linear-gradient(180deg,#1a1a1a 0%,var(--dark-bg) 100%);
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .main-nav {
+            display: flex;
+            gap: 15px;
+        }
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .main-nav a:hover {
+            color: var(--primary-color);
+            background: rgba(218,165,32,.12);
+        }
+        h1.contact-title {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, var(--primary-color), #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 22px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .contact-section p,
+        .contact-section ul {
+            margin-bottom: 18px;
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+        }
+        .contact-method {
+            background: var(--dark-bg);
+            margin: 28px 0;
+            padding: 24px 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(218,165,32,.055);
+            border: 1px solid var(--border-color);
+        }
+        .contact-method strong {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .contact-method a {
+            color: var(--primary-color);
+            direction: ltr;
+            word-break: break-all;
+            font-size: 1.08rem;
+            margin-right: 7px;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+        .main-footer {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #000 100%);
+            padding: 36px 0 20px;
+            border-top: 2px solid var(--border-color);
+            margin-top: 80px;
+        }
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        @media(max-width: 700px){
+            .container {margin-top:30px;}
+            .footer-links { flex-direction: column; gap: 10px;}
+            .logo {font-size: 2rem;}
+            .main-nav a {font-size: .93rem; padding:7px 10px;}
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">موتري</a>
+            <nav class="main-nav">
+                <a href="#">الرئيسية</a>
+                <a href="#">أخبار</a>
+                <a href="#">مراجعات</a>
+                <a href="#">نصائح</a>
+                <a href="privacy.html" style="color:var(--primary-color);font-weight:bold;">سياسة الخصوصية</a>
+                <a href="contact.html" style="color:var(--primary-color);font-weight:bold;">اتصل بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container contact-section">
+            <h1 class="contact-title">اتصل بنا</h1>
+            <p>
+                مرحباً بك في صفحة التواصل مع فريق <strong>موتري</strong>.<br>
+                يسعدنا استقبال ملاحظاتك أو استفساراتك حول أي موضوع أو مشكلة تواجهك داخل الموقع أو عن السيارات بشكل عام.<br>
+                يمكنك التواصل معنا عبر البريد الإلكتروني أو النموذج بالأسفل.
+            </p>
+
+            <div class="contact-method">
+                <strong>البريد الإلكتروني:</strong>
+                <a href="mailto:topanime0022@gmail.com">topanime0022@gmail.com</a>
+            </div>
+
+            <h2 style="color:var(--primary-color);margin-bottom:12px;">نموذج التواصل السريع</h2>
+            <form style="display:flex;flex-direction:column;gap:22px;">
+                <div>
+                    <label for="name">الاسم:</label><br>
+                    <input id="name" name="name" type="text" placeholder="اكتب اسمك" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border-color);margin-top:7px;background:var(--card-bg);color:var(--text-light);">
+                </div>
+                <div>
+                    <label for="email">البريد الإلكتروني:</label><br>
+                    <input id="email" name="email" type="email" placeholder="بريدك الإلكتروني" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border-color);margin-top:7px;background:var(--card-bg);color:var(--text-light);">
+                </div>
+                <div>
+                    <label for="msg">رسالتك:</label><br>
+                    <textarea id="msg" name="msg" rows="5" placeholder="اكتب رسالتك هنا" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border-color);margin-top:7px;background:var(--card-bg);color:var(--text-light);"></textarea>
+                </div>
+                <button type="submit" style="padding:12px;font-family:'Cairo',sans-serif;font-size:1.08rem;background:var(--primary-color);color:#222;font-weight:bold;border:none;border-radius:8px;cursor:pointer;transition:background 0.3s;">إرسال الرسالة</button>
+            </form>
+            <p style="color:var(--text-secondary);margin-top:22px;font-size:.95rem;text-align:center;">
+                سنسعى للرد عليك خلال 24 ساعة عبر البريد الإلكتروني أو من خلال رقم الهاتف اذا قمت بذكره.
+            </p>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">موتري</div>
+                <p>وجهتك الأولى لأحدث أخبار ومراجعات السيارات</p>
+                <div class="footer-links">
+                    <a href="#">من نحن</a>
+                    <a href="contact.html" style="color:var(--primary-color);font-weight:bold;">اتصل بنا</a>
+                    <a href="privacy.html" style="color:var(--primary-color);font-weight:bold;">سياسة الخصوصية</a>
+                    <a href="#">الشروط والأحكام</a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 موتري. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

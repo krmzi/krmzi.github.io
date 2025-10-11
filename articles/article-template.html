@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جارٍ تحضير الحلقة...</title>
+    
+    <!-- === (1) ضع كود إعلان Popunder الخاص بـ Adsterra هنا === -->
+
+    <!-- === (2) استدعاء خط Cairo من Google Fonts === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- === (3) كود CSS كامل ومتكامل لهذه الصفحة فقط === -->
+    <style>
+        /* --- الإعدادات العامة والمتغيرات --- */
+        :root {
+            --primary-color: #DD0C39; /* اللون القرمزي المميز */
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #ececec;
+            --text-secondary: #a0a0a0;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        body { 
+            font-family: 'Cairo', sans-serif; /* تطبيق خط Cairo */
+            background-color: var(--dark-bg); 
+            color: var(--text-light); 
+            margin: 0; 
+            padding: 20px; 
+            line-height: 1.8;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        /* --- تصميم المقال الوهمي --- */
+        .article-content h1 { 
+            font-size: 2.2rem; 
+            color: #fff; 
+            margin-bottom: 15px; 
+            border-right: 4px solid var(--primary-color); 
+            padding-right: 15px; 
+        }
+        .article-content img { 
+            max-width: 100%; 
+            border-radius: 12px; 
+            margin: 20px 0; 
+        }
+        .article-content p { 
+            color: var(--text-secondary); 
+            font-size: 1.1rem; 
+        }
+
+        /* --- تصميم حاويات الإعلانات --- */
+        .ad-container { 
+            margin: 40px auto; 
+            padding: 20px; 
+            border: 1px dashed var(--border-color); 
+            border-radius: 8px; 
+            text-align: center; 
+            color: var(--text-secondary); 
+        }
+        .ad-container::before { 
+            content: "مساحة إعلانية"; 
+        }
+        
+        /* --- تصميم عداد الانتظار --- */
+        #countdown-container { 
+            padding: 30px; 
+            text-align: center; 
+            background-color: var(--card-bg); 
+            border-radius: 8px; 
+            margin: 40px 0; 
+        }
+        #countdown-timer { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            color: var(--primary-color); 
+        }
+
+        /* --- تصميم قسم المشغل --- */
+        #player-section { 
+            display: none; /* مخفي افتراضيًا */ 
+        }
+        #player-section h2 { 
+            font-size: 1.8rem; 
+            margin-bottom: 20px; 
+        }
+        .video-player-container { 
+            position: relative; 
+            aspect-ratio: 16 / 9; 
+            background-color: #000; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5); 
+        }
+        .video-player-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+        }
+        
+        /* --- تصميم أزرار السيرفرات (المشغلات) --- */
+        .server-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            margin: 20px 0; 
+            border-top: 1px solid var(--border-color); 
+            padding-top: 20px; 
+        }
+        .server-button { 
+            padding: 12px 25px; 
+            font-size: 1rem; 
+            font-weight: 600; 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #333; 
+            color: var(--text-light); 
+            border: 1px solid transparent; 
+            border-radius: 8px; 
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .server-button.active, 
+        .server-button:hover { 
+            background-color: var(--primary-color); 
+            border-color: var(--primary-color);
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 20px rgba(221, 12, 57, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- === مقال وهمي احترافي === -->
+        <article class="article-content">
+            <h1>أداء يفوق التوقعات: تجربة قيادة شاملة لـ BMW iX 2025</h1>
+            <p>كشفت الشركة العريقة عن رؤيتها المستقبلية للسيارات الرياضية من خلال نموذجها الاختباري الجديد. يجمع التصميم بين الخطوط الكلاسيكية التي اشتهرت بها العلامة واللمسات العصرية الجريئة التي ترسم ملامح الغد.</p>
+        </article>
+
+        <!-- === (4) ضع كود إعلان بانر هنا (فوق العداد) === -->
+        <div class="ad-container" id="ad-container-1">
+             <!-- [كود إعلان البانر الأول يوضع هنا من Adsterra] -->
+        </div>
+
+        <!-- === عداد الانتظار الأنيق === -->
+        <div id="countdown-container">
+            <p>جارٍ تحضير المشغل، يرجى الانتظار...</p>
+            <div id="countdown-timer">20</div>
+        </div>
+
+        <!-- === قسم المشغل الكامل (مخفي افتراضيًا) === -->
+        <section id="player-section">
+            <h2>اختر المشغل المناسب:</h2>
+            <div class="video-player-container">
+                <iframe id="video-player" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            
+            <div class="server-list">
+                <button class="server-button active" data-src="[رابط المشغل الأول]">المشغل الأول</button>
+                <button class="server-button" data-src="[رابط المشغل الثاني]">المشغل الثاني</button>
+                <button class="server-button" data-src="[رابط المشغل الثالث]">المشغل الثالث</button>
+            </div>
+
+            <!-- === (5) ضع كود إعلان بانر هنا (تحت المشغلات) === -->
+            <div class="ad-container" id="ad-container-2">
+                 <!-- [كود إعلان البانر الثاني يوضع هنا من Adsterra] -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- === (6) كود JavaScript كامل مع التحكمات والحركات === -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- إعداد العناصر ---
+            const countdownTimer = document.getElementById('countdown-timer');
+            const countdownContainer = document.getElementById('countdown-container');
+            const playerSection = document.getElementById('player-section');
+            const serverButtons = document.querySelectorAll('.server-button');
+            const videoPlayer = document.getElementById('video-player');
+            
+            // --- وظيفة تشغيل العداد ---
+            let timeLeft = 20; // يمكنك تغيير مدة الانتظار من هنا
+            const startCountdown = () => {
+                const countdownInterval = setInterval(() => {
+                    timeLeft--;
+                    countdownTimer.textContent = timeLeft;
+                    if (timeLeft <= 0) {
+                        clearInterval(countdownInterval);
+                        countdownContainer.style.display = 'none';
+                        playerSection.style.display = 'block';
+                    }
+                }, 1000);
+            };
+
+            // --- وظيفة التحكم بالمشغلات ---
+            const setupServerButtons = () => {
+                // تعيين الفيديو الافتراضي ليكون الخاص بالزر النشط الأول
+                const firstActiveButton = document.querySelector('.server-button.active');
+                if(firstActiveButton){
+                    videoPlayer.setAttribute('src', firstActiveButton.getAttribute('data-src'));
+                }
+
+                serverButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        serverButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        const newSrc = this.getAttribute('data-src');
+                        if (newSrc) {
+                            videoPlayer.setAttribute('src', newSrc);
+                        }
+                    });
+                });
+            };
+
+            // --- تشغيل كل شيء ---
+            startCountdown();
+            setupServerButtons();
+        });
+    </script>
+</body>
+</html>

@@ -1,19 +1,151 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع موتري للسيارات</title>
-    <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { text-align: center; }
-        h1 { color: #DB2777; } /* A placeholder color */
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موتري - أحدث أخبار السيارات</title>
+<style>
+:root { 
+    --primary-color: #DAA520; 
+    --dark-bg: #1a1a1a; 
+    --card-bg: #2a2a2a; 
+    --text-light: #f5f5f5; 
+    --text-secondary: #aaa; 
+}
+body { 
+    font-family: sans-serif; 
+    background-color: var(--dark-bg); 
+    color: var(--text-light); 
+    margin: 0; 
+    line-height: 1.6; 
+}
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+/* --- الهيدر --- */
+.main-header { 
+    padding: 20px 0; 
+    border-bottom: 1px solid #333; 
+}
+.header-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.logo { 
+    font-size: 2.2rem; 
+    font-weight: bold; 
+    color: var(--primary-color); 
+    text-decoration: none; 
+}
+.main-nav a { 
+    color: var(--text-light); 
+    text-decoration: none; 
+    margin-right: 25px; 
+    font-size: 1.1rem; 
+}
+/* --- شبكة المقالات --- */
+.main-content { 
+    padding: 60px 0; 
+}
+.section-title { 
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+    text-align: center; 
+}
+.articles-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 30px; 
+}
+.article-card { 
+    background-color: var(--card-bg); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    text-decoration: none; 
+    display: block; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.article-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5); 
+}
+.card-image img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+.card-content { 
+    padding: 20px; 
+}
+.card-title { 
+    font-size: 1.4rem; 
+    color: var(--text-light); 
+    margin: 0 0 10px; 
+}
+.card-excerpt { 
+    font-size: 1rem; 
+    color: var(--text-secondary); 
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>موقع موتري للسيارات</h1>
-        <p>تحت الإنشاء...</p>
-    </div>
+    <!-- الهيدر -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">موتري</a>
+            <nav class="main-nav">
+                <a href="#">أخبار</a>
+                <a href="#">مراجعات</a>
+                <a href="#">نصائح</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">أحدث المقالات</h2>
+            
+            <div class="articles-grid">
+                <!-- بطاقة مقال (مثال 1) -->
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=Car" alt="صورة سيارة">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">مراجعة شاملة لسيارة BMW iX 2025 الكهربائية</h3>
+                        <p class="card-excerpt">نظرة عميقة على أحدث ما قدمته BMW في عالم السيارات الكهربائية، من الأداء إلى التصميم الداخلي والتقنيات المتطورة...</p>
+                    </div>
+                </a>
+                
+                <!-- بطاقة مقال (مثال 2) -->
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=Car" alt="صورة سيارة">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">أفضل 5 سيارات SUV عائلية في السوق حاليًا</h3>
+                        <p class="card-excerpt">مقارنة شاملة بين أفضل السيارات العائلية متعددة الاستخدامات من حيث المساحة، الأمان، واستهلاك الوقود...</p>
+                    </div>
+                </a>
+                
+                <!-- بطاقة مقال (مثال 3) -->
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=Car" alt="صورة سيارة">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">كيفية الحفاظ على بطارية سيارتك الكهربائية</h3>
+                        <p class="card-excerpt">نصائح عملية لإطالة عمر بطارية سيارتك الكهربائية وتحقيق أقصى استفادة من كل عملية شحن...</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+ 
 </body>
 </html>

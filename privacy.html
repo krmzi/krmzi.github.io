@@ -4,224 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سياسة الخصوصية | موتري</title>
-    <!-- خط Cairo الاحترافي -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #DAA520;
-            --dark-bg: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --text-light: #f5f5f5;
-            --text-secondary: #999;
-            --border-color: #333;
+        :root { 
+            --primary-color: #DAA520; --dark-bg: #121212; --card-bg: #1e1e1e; 
+            --text-light: #f5f5f5; --text-secondary: #aaa; --border-color: #333;
         }
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.8;
-            margin: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 60px auto 0 auto;
-            background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 6px 30px rgba(218,165,32,.09);
-            padding: 36px 18px 40px 18px;
-        }
-        header.main-header {
-            padding: 25px 0 0;
-            background: linear-gradient(180deg,#1a1a1a 0%,var(--dark-bg) 100%);
-            border-bottom: 2px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .main-nav {
-            display: flex;
-            gap: 15px;
-        }
-        .main-nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-        .main-nav a:hover {
-            color: var(--primary-color);
-            background: rgba(218,165,32,.12);
-        }
-        h1.privacy-title {
-            font-size: 2.2rem;
-            background: linear-gradient(135deg, var(--primary-color), #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 22px;
-            font-weight: 800;
-            text-align: center;
-        }
-        .privacy-section h2 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-top: 40px;
-            margin-bottom: 10px;
-        }
-        .privacy-section p, .privacy-section ul {
-            margin-bottom: 18px;
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-        }
-        .privacy-section ul {
-            padding-right: 25px;
-        }
-        .main-footer {
-            background: linear-gradient(180deg, var(--dark-bg) 0%, #000 100%);
-            padding: 36px 0 20px;
-            border-top: 2px solid var(--border-color);
-            margin-top: 80px;
-        }
-        .footer-content {
-            text-align: center;
-            color: var(--text-secondary);
-        }
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
-        }
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        @media(max-width: 700px){
-            .container {margin-top:30px;}
-            .footer-links { flex-direction: column; gap: 10px;}
-            .logo {font-size: 2rem;}
-            .main-nav a {font-size: .95rem; padding:8px 12px;}
-        }
+        * { margin:0; padding:0; box-sizing:border-box;}
+        body { font-family:'Cairo',sans-serif; background:var(--dark-bg); color:var(--text-light); line-height:1.7;}
+        .container { width:90%; max-width:1200px; margin:0 auto; }
+        .main-header { padding:25px 0; border-bottom:1px solid var(--border-color); }
+        .header-container { text-align: center; }
+        .logo { font-size:2.8rem; font-weight:800; color:var(--primary-color); text-decoration:none; }
+        .main-content { padding:80px 0; }
+        .page-wrapper { max-width: 900px; margin: 0 auto; background-color: var(--card-bg); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .page-title { font-size:2.5rem; text-align: center; margin-bottom:30px; font-weight:700;}
+        .content-section h2 { font-size:1.6rem; color:var(--primary-color); margin:30px 0 15px;}
+        .content-section p, .content-section ul { font-size:1.1rem; color:var(--text-secondary); margin-bottom:15px; }
+        .content-section ul { padding-right: 20px;}
+        .main-footer { background:#0f0f0f; padding:50px 0 30px; border-top:1px solid var(--border-color); margin-top:80px;}
+        .footer-content { text-align:center; color:var(--text-secondary);}
+        .footer-logo { font-size:2rem; font-weight:800; color:var(--primary-color); margin-bottom:10px; display:inline-block;}
+        .footer-links { display:flex; justify-content:center; gap:25px; margin:20px 0; flex-wrap:wrap;}
+        .footer-links a { color:var(--text-secondary); text-decoration:none; transition:.3s;}
+        .footer-links a:hover { color:var(--primary-color);}
+        .copyright { margin-top:30px; font-size:.9rem;}
+        @media(max-width:768px){ .logo{font-size:2.2rem;} .page-title{font-size:2rem;} .page-wrapper{padding:25px;} }
     </style>
 </head>
 <body>
     <header class="main-header">
-        <div class="header-container">
-            <a href="#" class="logo">موتري</a>
-            <nav class="main-nav">
-                <a href="#">الرئيسية</a>
-                <a href="#">أخبار</a>
-                <a href="#">مراجعات</a>
-                <a href="#">نصائح</a>
-                <a href="privacy.html" style="color:var(--primary-color);font-weight:bold;">سياسة الخصوصية</a>
-            </nav>
+        <div class="container header-container">
+            <a href="index.html" class="logo">موتري</a>
         </div>
     </header>
 
-    <main>
-        <div class="container privacy-section">
-            <h1 class="privacy-title">سياسة الخصوصية لموقع موتري</h1>
-            <p>
-                في موقع <strong>موتري</strong> (“نحن”، “الموقع”)، نهتم بحماية خصوصية المستخدمين والزوار. تحتوي هذه الصفحة على جميع التفاصيل المتعلقة بكيفية جمع واستخدام وحماية المعلومات عبر موقعنا.
-            </p>
+    <main class="main-content">
+        <div class="container page-wrapper">
+            <h1 class="page-title">سياسة الخصوصية</h1>
+            <div class="content-section">
+                <p>في موقع <strong>موتري</strong>، خصوصيتك هي أولويتنا. تشرح هذه الوثيقة أنواع المعلومات التي نجمعها وكيفية استخدامنا لها.</p>
 
-            <h2>١. المعلومات التي نجمعها</h2>
-            <ul>
-                <li>معلومات الهوية الأساسية مثل الاسم والبريد الإلكتروني عند التسجيل أو الاشتراك في النشرة البريدية.</li>
-                <li>معلومات تقنية مثل عنوان الـ IP، نوع المتصفح، نظام التشغيل ووقت الوصول.</li>
-                <li>بيانات الاستخدام للصفحات والمقالات التي تزورها وطريقة التفاعل مع المحتوى.</li>
-            </ul>
+                <h2>1. المعلومات التي نجمعها</h2>
+                <p>نحن لا نجمع أي معلومات شخصية تحدد هويتك (مثل الاسم أو البريد الإلكتروني) لأن موقعنا هو مدونة معلوماتية فقط ولا يتطلب تسجيل حساب.</p>
 
-            <h2>٢. كيف نستخدم المعلومات</h2>
-            <ul>
-                <li>لتحسين تجربة المستخدم وتطوير محتوى الموقع.</li>
-                <li>للرد على استفساراتكم وتقديم الدعم الفني عند الحاجة.</li>
-                <li>لإرسال تحديثات ومقالات أو عروض خاصة عبر البريد الإلكتروني (بإمكانك إلغاء الاشتراك في أي وقت).</li>
-                <li>لأغراض أمنية وتحليل إحصائي وقياس عدد الزوار.</li>
-            </ul>
+                <h2>2. ملفات تعريف الارتباط (Cookies) والإعلانات</h2>
+                <p>قد يستخدم شركاؤنا الإعلانيون (مثل Adsterra) ملفات تعريف الارتباط لعرض إعلانات مخصصة بناءً على اهتماماتك. نحن لا نتحكم في هذه الملفات. يمكنك تعطيلها من إعدادات متصفحك.</p>
 
-            <h2>٣. مشاركة المعلومات مع أطراف ثالثة</h2>
-            <p>
-                لا نقوم ببيع أو مشاركة بياناتك الشخصية مع أي جهة خارجية إلا في الحالات التالية:
-                <br>- الامتثال للقانون والطلبات الحكومية الرسمية.
-                <br>- حماية حقوق الموقع أو حقوق المستخدمين.
-            </p>
+                <h2>3. الروابط الخارجية</h2>
+                <p>يحتوي موقعنا على روابط لمواقع أخرى. نحن غير مسؤولين عن ممارسات الخصوصية لهذه المواقع. يرجى مراجعة سياساتهم الخاصة.</p>
+                
+                <h2>4. موافقتك</h2>
+                <p>باستخدامك لموقعنا، فإنك توافق على سياسة الخصوصية هذه.</p>
 
-            <h2>٤. ملفات تعريف الارتباط (Cookies)</h2>
-            <p>
-                يستخدم موقعنا ملفات تعريف الارتباط لتحسين تجربة التصفح وتحليل الاستخدام. يمكنك تغيير إعدادات المتصفح لتعطيل ملفات الكوكيز لكن ذلك قد يؤثر على أداء وميزات الموقع.
-            </p>
-
-            <h2>٥. الروابط الخارجية</h2>
-            <p>
-                قد تحتوي صفحاتنا على روابط لمواقع خارجية. نحن لسنا مسؤولين عن سياسات الخصوصية لدى تلك المواقع، يرجى مراجعتها بشكل منفصل.
-            </p>
-
-            <h2>٦. حماية المعلومات</h2>
-            <p>
-                نلتزم بحماية بياناتك عبر إجراءات أمنية وسياسات حديثة للحفاظ عليها من الوصول غير المصرح به أو الاستخدام غير السليم.
-            </p>
-
-            <h2>٧. موافقة المستخدم وحقوقه</h2>
-            <ul>
-                <li>دخولك واستخدامك للموقع يعني موافقتك على بنود سياسة الخصوصية.</li>
-                <li>لديك حق طلب تعديل أو حذف بياناتك الشخصية عبر مراسلتنا مباشرة.</li>
-            </ul>
-
-            <h2>٨. التحديثات والتعديلات</h2>
-            <p>
-                قد نقوم بتحديث سياسة الخصوصية عند الحاجة، وسيتم نشر أي تغيير على هذه الصفحة مع تعديل تاريخ آخر تحديث.
-            </p>
-
-            <p style="margin-top:16px;color:var(--primary-color);">
-                آخر تحديث: 11 أكتوبر 2025
-            </p>
+                <p style="margin-top:20px; color:var(--text-secondary);">آخر تحديث: 11 أكتوبر 2025</p>
+            </div>
         </div>
     </main>
-
+    
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">موتري</div>
-                <p>وجهتك الأولى لأحدث أخبار ومراجعات السيارات</p>
-                <div class="footer-links">
-                    <a href="#">من نحن</a>
-                    <a href="#">اتصل بنا</a>
-                    <a href="privacy.html" style="color:var(--primary-color);font-weight:bold;">سياسة الخصوصية</a>
-                    <a href="#">الشروط والأحكام</a>
-                </div>
-                <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 موتري. جميع الحقوق محفوظة.</p>
+        <div class="container footer-content">
+            <div class="footer-logo">موتري</div>
+            <div class="footer-links">
+                <a href="contact.html">اتصل بنا</a>
+                <a href="privacy.html" style="color: var(--primary-color); font-weight:bold;">سياسة الخصوصية</a>
             </div>
+            <p class="copyright">© 2025 موتري. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 </body>

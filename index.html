@@ -3,17 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع موتري للسيارات</title>
+    <title>موتري - أحدث أخبار السيارات</title>
+    
+    <!-- استدعاء خط Cairo من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { text-align: center; }
-        h1 { color: #DB2777; } /* A placeholder color */
+        :root { 
+            --primary-color: #DAA520; 
+            --primary-hover: #C89520;
+            --dark-bg: #0f0f0f; 
+            --card-bg: #1a1a1a; 
+            --card-hover: #232323;
+            --text-light: #f5f5f5; 
+            --text-secondary: #999; 
+            --border-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: var(--text-light); 
+            line-height: 1.7; 
+            overflow-x: hidden;
+        }
+        
+        .container { 
+            width: 90%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        /* --- الهيدر المحسّن --- */
+        .main-header { 
+            padding: 25px 0; 
+            border-bottom: 2px solid var(--border-color); 
+            background: linear-gradient(180deg, #1a1a1a 0%, var(--dark-bg) 100%);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        
+        .logo { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: var(--primary-color); 
+            text-decoration: none; 
+            text-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .main-nav a { 
+            color: var(--text-light); 
+            text-decoration: none; 
+            font-size: 1.1rem; 
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .main-nav a:hover {
+            color: var(--primary-color);
+            background-color: rgba(218, 165, 32, 0.1);
+        }
+        
+        .main-nav a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+        
+        /* --- المحتوى الرئيسي --- */
+        .main-content { 
+            padding: 80px 0; 
+            min-height: 80vh;
+        }
+        
+        .section-title { 
+            font-size: 3rem; 
+            margin-bottom: 50px; 
+            text-align: center; 
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            border-radius: 2px;
+        }
+        
+        /* --- شبكة المقالات المحسّنة --- */
+        .articles-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
+            gap: 35px; 
+        }
+        
+        .article-card { 
+            background: linear-gradient(145deg, var(--card-bg), #1f1f1f);
+            border-radius: 16px; 
+            overflow: hidden; 
+            text-decoration: none; 
+            display: block; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: 1px solid rgba(218, 165, 32, 0.1);
+            position: relative;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .article-card:hover::before {
+            opacity: 1;
+        }
+        
+        .article-card:hover { 
+            transform: translateY(-12px) scale(1.02); 
+            box-shadow: 0 20px 40px rgba(218, 165, 32, 0.2), 
+                        0 0 0 2px rgba(218, 165, 32, 0.3);
+            background: linear-gradient(145deg, var(--card-hover), #252525);
+        }
+        
+        .card-image { 
+            position: relative; 
+            overflow: hidden;
+            height: 220px;
+        }
+        
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
+            transition: opacity 0.3s ease;
+        }
+        
+        .article-card:hover .card-image::after {
+            opacity: 0.5;
+        }
+        
+        .card-image img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+        
+        .article-card:hover .card-image img {
+            transform: scale(1.15);
+        }
+        
+        .card-content { 
+            padding: 25px; 
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-title { 
+            font-size: 1.4rem; 
+            color: var(--text-light); 
+            margin: 0 0 15px; 
+            font-weight: 700;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+        
+        .article-card:hover .card-title {
+            color: var(--primary-color);
+        }
+        
+        .card-excerpt { 
+            font-size: 1rem; 
+            color: var(--text-secondary); 
+            line-height: 1.7;
+        }
+        
+        /* --- Footer --- */
+        .main-footer {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #000 100%);
+            padding: 40px 0 20px;
+            border-top: 2px solid var(--border-color);
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .main-nav {
+                gap: 5px;
+            }
+            
+            .main-nav a {
+                font-size: 0.95rem;
+                padding: 8px 12px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* --- تأثيرات التحميل --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .article-card:nth-child(1) { animation-delay: 0.1s; }
+        .article-card:nth-child(2) { animation-delay: 0.2s; }
+        .article-card:nth-child(3) { animation-delay: 0.3s; }
+        .article-card:nth-child(4) { animation-delay: 0.4s; }
+        .article-card:nth-child(5) { animation-delay: 0.5s; }
+        .article-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>موقع موتري للسيارات</h1>
-        <p>تحت الإنشاء...</p>
-    </div>
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">موتري</a>
+            <nav class="main-nav">
+                <a href="#">أخبار</a>
+                <a href="#">مراجعات</a>
+                <a href="#">نصائح</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">أحدث المقالات</h2>
+            
+            <div class="articles-grid">
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=BMW+iX" alt="صورة سيارة BMW">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">مراجعة شاملة لسيارة BMW iX 2025 الكهربائية</h3>
+                        <p class="card-excerpt">نظرة عميقة على أحدث ما قدمته BMW في عالم السيارات الكهربائية، من الأداء إلى التصميم الداخلي والتقنيات المتطورة...</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=SUV" alt="صورة سيارة SUV">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">أفضل 5 سيارات SUV عائلية في السوق حاليًا</h3>
+                        <p class="card-excerpt">مقارنة شاملة بين أفضل السيارات العائلية متعددة الاستخدامات من حيث المساحة، الأمان، واستهلاك الوقود...</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=Electric" alt="سيارة كهربائية">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">كيفية الحفاظ على بطارية سيارتك الكهربائية</h3>
+                        <p class="card-excerpt">نصائح عملية لإطالة عمر بطارية سيارتك الكهربائية وتحقيق أقصى استفادة من كل عملية شحن...</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=Sports" alt="سيارة رياضية">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">أقوى السيارات الرياضية لعام 2025</h3>
+                        <p class="card-excerpt">استعراض لأسرع وأقوى السيارات الرياضية التي تم إطلاقها هذا العام مع مواصفات الأداء والأسعار...</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=Maintenance" alt="صيانة السيارات">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">دليل الصيانة الدورية للسيارات</h3>
+                        <p class="card-excerpt">كل ما تحتاج معرفته عن جدول الصيانة الدورية لسيارتك للحفاظ على أدائها في أفضل حالاته...</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="article-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/600x400/DDAA20/1A1A1A?text=Tech" alt="تقنيات السيارات">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">أحدث التقنيات في عالم السيارات الحديثة</h3>
+                        <p class="card-excerpt">تعرف على أبرز التقنيات المبتكرة في السيارات الحديثة من القيادة الذاتية إلى أنظمة الأمان المتطورة...</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">موتري</div>
+                <p>وجهتك الأولى لأحدث أخبار ومراجعات السيارات</p>
+                <div class="footer-links">
+                    <a href="#">من نحن</a>
+                    <a href="#">اتصل بنا</a>
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">الشروط والأحكام</a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 موتري. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+ 
 </body>
 </html>

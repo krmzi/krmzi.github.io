@@ -253,15 +253,12 @@
                 <iframe id="video-player" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
            <div class="server-list">
-  <button class="server-button active" data-src="https://vfaststream.com/z8ZedIlJLs1vt">Vfaststream</button>
-  <button class="server-button" data-src="https://turbovidhls.com/t/68ec29f623256">Turbovidhls</button>
-  <button class="server-button" data-src="https://casthq.to//e/ftsbbwth3v7y">Casthq</button>
-  <button class="server-button" data-src="https://short.icu/_9Zh5hwbv">Short</button>
-  <button class="server-button" data-src="https://bigwarp.io/embed-anv2ywvivd4v.html">Bigwarp</button>
-  <button class="server-button" data-src="https://anafasts.com/embed-k9g5gqlc28pr.html">Anafasts</button>
-  <button class="server-button" data-src="https://vidspeeds.com/embed-uw5on257hhqn.html">Vidspeeds</button>
-  <button class="server-button" data-src="https://vidroba.com/embed-petr2n3q9uvn.html">Vidroba</button>
+  <button class="server-button active" data-src="https://ok.ru/videoembed/10174648224419?nochat=1&autoplay=1">سيرفر 1</button>
+  <button class="server-button" data-src="https://vkvideo.ru/video_ext.php?oid=-229935068&id=456239050&autoplay=1">سيرفر 2</button>
+  <button class="server-button" data-src="https://ok.ru/videoembed/10200731814535?nochat=1&autoplay=1">سيرفر 3</button>
+  <button class="server-button" data-src="https://w.shadwo.pro/albaplayer/veliaht-2025-s01e01/?serv=0">سيرفر 4</button>
 </div>
+
 
 
 
